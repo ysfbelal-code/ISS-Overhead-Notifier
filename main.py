@@ -1,9 +1,10 @@
-import requests
+import requests, os
 from send_message import Message
-from os import getenv
+from dotenv import load_dotenv
 
-LAT = getenv("LAT")
-LONG = getenv("LONG")
+load_dotenv()
+LAT = os.getenv("LAT")
+LONG = os.getenv("LONG")
 
 response = requests.get("http://api.open-notify.org/iss-now.json")
 response.raise_for_status()
@@ -12,7 +13,7 @@ longitude = response.json()['iss_position']['longitude']
 latitude = response.json()['iss_position']['latitude']
 
 iss_coordinates = (float(longitude), float(latitude))
-my_coordinates = LAT, LONG
+my_coordinates = float(LAT), float(LONG)
 difference = (iss_coordinates[0] - my_coordinates[0], iss_coordinates[1] - my_coordinates[1])
 
 print("ISS Coordinates:", iss_coordinates)
