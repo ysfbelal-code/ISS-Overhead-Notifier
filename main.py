@@ -1,5 +1,9 @@
 import requests
 from send_message import Message
+from os import getenv
+
+LAT = getenv("LAT")
+LONG = getenv("LONG")
 
 response = requests.get("http://api.open-notify.org/iss-now.json")
 response.raise_for_status()
