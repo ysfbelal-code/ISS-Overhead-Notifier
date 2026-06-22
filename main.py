@@ -19,7 +19,7 @@ difference = (iss_coordinates[0] - my_coordinates[0], iss_coordinates[1] - my_co
 print("ISS Coordinates:", iss_coordinates)
 print("My Coordinates:", my_coordinates)
 print("Difference:", difference)
-if difference[0] > -5 < 5 and difference[1] > -5 < 5:
+if -5 < difference[0] < 5 and -5 < difference[1] < 5:
     print("The ISS is over you!")
     send = Message()
     send.send_email()
