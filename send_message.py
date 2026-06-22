@@ -7,7 +7,7 @@ class Message(smtplib.SMTP):
         super().__init__(host, port)
         self.email_sender = getenv("GMAIL_EMAIL")
         self.email_password = getenv("GMAIL_PASSWORD")
-        self.email_receiver = getenv("EMAIL_RECIEVER")
+        self.email_receiver = getenv("EMAIL_RECEIVER")
         self.msg = EmailMessage()
         self.msg['Subject'] = "The ISS is over you!"
         self.msg['From'] = self.email_sender
