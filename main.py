@@ -2,7 +2,7 @@ import requests, os
 from send_message import Message
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv(dotenv_path="secrets.env")
 LAT = os.getenv("LAT")
 LONG = os.getenv("LONG")
 
