@@ -1,4 +1,2 @@
-smtplib
-email
 requests
-send_message
+python-dotenv
