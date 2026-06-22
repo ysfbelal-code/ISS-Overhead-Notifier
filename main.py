@@ -1,9 +1,6 @@
 import requests
 from send_message import Message
 
-LAT = 25.23996269215846
-LONG = 51.49126674249541
-
 response = requests.get("http://api.open-notify.org/iss-now.json")
 response.raise_for_status()
 
